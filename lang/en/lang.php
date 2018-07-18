@@ -7,7 +7,7 @@ return [
     'nav' => [
         'normalise' => [
             'label' => 'Normalise URLs',
-            'description' => 'Apply URL preferences to prevent duplicate content.'
+            'description' => 'Apply URL normalisation preferences to prevent duplicate content.'
         ]
     ],
     'settings' => [
@@ -25,10 +25,10 @@ return [
             'label' => 'Domain prefix preference',
             'options' => [
                 'none' => 'None (do not apply a preference)',
-                'www' => 'Force URLs to start with \'www\'',
-                'notWww' => 'Force URLs to not start with \'www\''
+                'www' => 'Force domain to start with \'www\' prefix',
+                'notWww' => 'Force domain to exclude \'www\' prefix'
             ],
-            'comment' => 'This settings allows you to force URLs on your site to either start with <strong>www</strong> or not.'
+            'comment' => 'This settings allows you to force the domain portion of your URLs on your site to either start with <strong>www</strong> or not.'
         ],
         'trailing_slash' => [
             'label' => 'Trailing slash preference',
@@ -40,7 +40,7 @@ return [
             'comment' => 'This settings allows you to force URLs to end with a trailing slash or not. Note that this will not apply to URLs that end with a file extension.'
         ],
         'ignore' => [
-            'label' => 'Paths to ignore',
+            'label' => 'URL Paths to ignore',
             'comment' => 'You can provide a list of paths relative to the root URL in which no normalisation will occur. To include all subfolders and files, use the wildcard character <strong>*</strong>.'
         ]
     ],
