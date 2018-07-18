@@ -56,13 +56,13 @@ class NormaliseMiddleware
                 $extension = pathinfo($requestPath, PATHINFO_EXTENSION);
                 $hasSlash = (preg_match('/\/$/', $requestPath) === 1);
 
-                if (empty($extension)) {
+                if (empty($extension) && $requestPath !== '/') {
                     if ($settings->trailing_slash === 'yes' && $hasSlash === false) {
                         $requestPath = $requestPath . '/';
                         $changed = true;
                     }
                     if ($settings->trailing_slash === 'no' && $hasSlash === true) {
-                        $requestPath = substr($requestPath, 0, -1);
+                        $requestPath = preg_replace('/\/+$/', '', $requestPath);
                         $changed = true;
                     }
                 }
