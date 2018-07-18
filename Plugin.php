@@ -23,6 +23,18 @@ class Plugin extends PluginBase
         ];
     }
 
+    public function registerPermissions()
+    {
+        return [
+            'bennothommo.urlnormaliser.change_prefs' => [
+                'label' => 'bennothommo.urlnormaliser::lang.permission.label',
+                'tab' => 'system::lang.permissions.name',
+                'order' => 600,
+                'roles' => ['developer']
+            ]
+        ];
+    }
+
     public function registerSettings()
     {
         return [
@@ -32,8 +44,11 @@ class Plugin extends PluginBase
                 'category' => SettingsManager::CATEGORY_SYSTEM,
                 'icon' => 'icon-link',
                 'class' => 'BennoThommo\UrlNormaliser\Models\Settings',
-                'keywords' => 'urls redirect url normalise',
-                'order' => 450
+                'keywords' => 'urls redirect url normalise canonical',
+                'order' => 450,
+                'permissions' => [
+                    'bennothommo.urlnormaliser.change_prefs'
+                ]
             ]
         ];
     }

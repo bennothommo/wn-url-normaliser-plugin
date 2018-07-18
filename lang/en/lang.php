@@ -43,5 +43,8 @@ return [
             'label' => 'Paths to ignore',
             'comment' => 'You can provide a list of paths relative to the root URL in which no normalisation will occur. To include all subfolders and files, use the wildcard character <strong>*</strong>.'
         ]
+    ],
+    'permission' => [
+        'label' => 'Manage URL normalisation preferences'
     ]
 ];
