@@ -9,7 +9,6 @@ tabs:
                 canon: bennothommo.urlnormaliser::lang.settings.mode.options.canon
                 redirect: bennothommo.urlnormaliser::lang.settings.mode.options.redirect
             default: canon
-            required: true
         www_prefix:
             label: bennothommo.urlnormaliser::lang.settings.www_prefix.label
             tab: bennothommo.urlnormaliser::lang.settings.tabs.urlSettings
@@ -20,9 +19,6 @@ tabs:
                 www: bennothommo.urlnormaliser::lang.settings.www_prefix.options.www
                 notWww: bennothommo.urlnormaliser::lang.settings.www_prefix.options.notWww
             default: none
-            required: true
-            comment: bennothommo.urlnormaliser::lang.settings.www_prefix.comment
-            commentHtml: true
         trailing_slash:
             label: bennothommo.urlnormaliser::lang.settings.trailing_slash.label
             tab: bennothommo.urlnormaliser::lang.settings.tabs.urlSettings
@@ -33,7 +29,6 @@ tabs:
                 yes: bennothommo.urlnormaliser::lang.settings.trailing_slash.options.yes
                 no: bennothommo.urlnormaliser::lang.settings.trailing_slash.options.no
             default: none
-            required: true
             comment: bennothommo.urlnormaliser::lang.settings.trailing_slash.comment
             commentHtml: true
         ignore:
@@ -41,7 +36,6 @@ tabs:
             tab: bennothommo.urlnormaliser::lang.settings.tabs.urlSettings
             type: textarea
             size: large
-            required: true
             commentAbove: bennothommo.urlnormaliser::lang.settings.ignore.comment
             commentHtml: true
             placeholder: "Examples:\nbackend/*\nstorage/app/media/*"

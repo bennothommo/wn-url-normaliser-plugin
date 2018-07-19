@@ -25,10 +25,9 @@ return [
             'label' => 'Domain prefix preference',
             'options' => [
                 'none' => 'None (do not apply a preference)',
-                'www' => 'Force domain to start with \'www\' prefix',
-                'notWww' => 'Force domain to exclude \'www\' prefix'
-            ],
-            'comment' => 'This settings allows you to force the domain portion of your URLs on your site to either start with <strong>www</strong> or not.'
+                'www' => 'Force URLs to start with \'www\' prefix',
+                'notWww' => 'Force URLs to exclude \'www\' prefix'
+            ]
         ],
         'trailing_slash' => [
             'label' => 'Trailing slash preference',
@@ -37,10 +36,10 @@ return [
                 'yes' => 'Force URLs to end with a trailing slash',
                 'no' => 'Force URLs to not end with a trailing slash'
             ],
-            'comment' => 'This settings allows you to force URLs to end with a trailing slash or not. Note that this will not apply to URLs that end with a file extension.'
+            'comment' => 'Please note that this will not apply to URLs that end with a file extension.'
         ],
         'ignore' => [
-            'label' => 'URL Paths to ignore',
+            'label' => 'Paths to ignore',
             'comment' => 'You can provide a list of paths relative to the root URL in which no normalisation will occur. To include all subfolders and files, use the wildcard character <strong>*</strong>.'
         ]
     ],
