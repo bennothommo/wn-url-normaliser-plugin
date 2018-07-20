@@ -9,6 +9,13 @@ tabs:
                 canon: bennothommo.urlnormaliser::lang.settings.mode.options.canon
                 redirect: bennothommo.urlnormaliser::lang.settings.mode.options.redirect
             default: canon
+        force_https:
+            label: bennothommo.urlnormaliser::lang.settings.force_https.label
+            tab: bennothommo.urlnormaliser::lang.settings.tabs.urlSettings
+            type: checkbox
+            span: right
+            default: false
+            comment: bennothommo.urlnormaliser::lang.settings.force_https.comment
         www_prefix:
             label: bennothommo.urlnormaliser::lang.settings.www_prefix.label
             tab: bennothommo.urlnormaliser::lang.settings.tabs.urlSettings

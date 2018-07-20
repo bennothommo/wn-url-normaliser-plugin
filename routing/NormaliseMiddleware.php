@@ -82,6 +82,15 @@ class NormaliseMiddleware
                 }
             }
 
+            // Add HTTPS if it is forced
+            if (empty($urlInfo['scheme'])) {
+                $urlInfo['scheme'] = 'https';
+            }
+            if (boolval($settings->force_https) === true && $urlInfo['scheme'] === 'http') {
+                $urlInfo['scheme'] = 'https';
+                $changed = true;
+            }
+
             if ($changed === true) {
                 if ($settings->mode === 'redirect') {
                     return redirect()->away(

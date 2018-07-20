@@ -21,6 +21,10 @@ return [
                 'redirect' => 'Redirect non-conforming URLs'
             ],
         ],
+        'force_https' => [
+            'label' => 'Force HTTPS?',
+            'comment' => 'If checked, the normalised URLs will always use a secure address.'
+        ],
         'www_prefix' => [
             'label' => 'Domain prefix preference',
             'options' => [
