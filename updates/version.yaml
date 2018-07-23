@@ -1,3 +1,4 @@
+1.0.3: Correctly remove "www." prefix if non-www is forced
 1.0.2: Add checkbox for HTTPS to be forced
 1.0.1: Tweak URL settings fields, comments and required indicators
 1.0.0: !!! Initial version of the plugin

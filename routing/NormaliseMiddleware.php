@@ -70,14 +70,14 @@ class NormaliseMiddleware
 
             // Add or remove www prefix if preferenced
             if ($settings->www_prefix !== 'none') {
-                $hasPrefix = (preg_match('/^www/i', $domain) === 1);
+                $hasPrefix = (preg_match('/^www./i', $domain) === 1);
 
                 if ($settings->www_prefix === 'www' && $hasPrefix === false) {
                     $domain = 'www.' . $domain;
                     $changed = true;
                 }
                 if ($settings->www_prefix === 'notWww' && $hasPrefix === true) {
-                    $domain = preg_replace('/^www/i', '', $domain);
+                    $domain = preg_replace('/^www./i', '', $domain);
                     $changed = true;
                 }
             }
