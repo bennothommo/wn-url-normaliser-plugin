@@ -1,6 +1,7 @@
 <?php
 namespace BennoThommo\UrlNormaliser\Routing;
 
+use App;
 use BennoThommo\UrlNormaliser\Models\Settings;
 use Config;
 use Closure;
@@ -20,6 +21,11 @@ class NormaliseMiddleware
      */
     public function handle($request, Closure $next)
     {
+        // Always allow backend to be accessed
+        if (App::runningInBackend()) {
+            return $next($request);
+        }
+
         $settings = Settings::instance();
         $urlInfo = parse_url($request->fullUrl());
         $domain = $urlInfo['host'];
