@@ -1,3 +1,4 @@
+1.0.4: Fix bug where requests crossing domains were skipping the ignored paths check, and run a better check to determine if user is in Backend.
 1.0.3: Correctly remove "www." prefix if non-www is forced
 1.0.2: Add checkbox for HTTPS to be forced
 1.0.1: Tweak URL settings fields, comments and required indicators
