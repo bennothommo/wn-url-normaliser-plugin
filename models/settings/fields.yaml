@@ -9,23 +9,23 @@ tabs:
                 canon: bennothommo.urlnormaliser::lang.settings.mode.options.canon
                 redirect: bennothommo.urlnormaliser::lang.settings.mode.options.redirect
             default: canon
-        force_https:
-            label: bennothommo.urlnormaliser::lang.settings.force_https.label
-            tab: bennothommo.urlnormaliser::lang.settings.tabs.urlSettings
-            type: checkbox
-            span: right
-            default: false
-            comment: bennothommo.urlnormaliser::lang.settings.force_https.comment
         www_prefix:
             label: bennothommo.urlnormaliser::lang.settings.www_prefix.label
             tab: bennothommo.urlnormaliser::lang.settings.tabs.urlSettings
             type: radio
-            span: left
+            span: right
             options:
                 none: bennothommo.urlnormaliser::lang.settings.www_prefix.options.none
                 www: bennothommo.urlnormaliser::lang.settings.www_prefix.options.www
                 notWww: bennothommo.urlnormaliser::lang.settings.www_prefix.options.notWww
             default: none
+        force_https:
+            label: bennothommo.urlnormaliser::lang.settings.force_https.label
+            tab: bennothommo.urlnormaliser::lang.settings.tabs.urlSettings
+            type: checkbox
+            span: left
+            default: false
+            comment: bennothommo.urlnormaliser::lang.settings.force_https.comment
         trailing_slash:
             label: bennothommo.urlnormaliser::lang.settings.trailing_slash.label
             tab: bennothommo.urlnormaliser::lang.settings.tabs.urlSettings
@@ -38,6 +38,13 @@ tabs:
             default: none
             comment: bennothommo.urlnormaliser::lang.settings.trailing_slash.comment
             commentHtml: true
+        normalise_nav:
+            label: bennothommo.urlnormaliser::lang.settings.normalise_nav.label
+            tab: bennothommo.urlnormaliser::lang.settings.tabs.urlSettings
+            type: checkbox
+            span: left
+            default: false
+            comment: bennothommo.urlnormaliser::lang.settings.normalise_nav.comment
         ignore:
             label: bennothommo.urlnormaliser::lang.settings.ignore.label
             tab: bennothommo.urlnormaliser::lang.settings.tabs.urlSettings

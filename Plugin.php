@@ -3,9 +3,9 @@ namespace BennoThommo\UrlNormaliser;
 
 use System\Classes\PluginBase;
 use System\Classes\SettingsManager;
-use BennoThommo\UrlNormaliser\Models\Settings;
+use BennoThommo\UrlNormaliser\Classes\Normalise;
 use Backend;
-use Router;
+use Event;
 
 class Plugin extends PluginBase
 {
@@ -58,5 +58,40 @@ class Plugin extends PluginBase
         // Add normalise middleware
         $this->app['Illuminate\Contracts\Http\Kernel']
             ->prependMiddleware('BennoThommo\UrlNormaliser\Routing\NormaliseMiddleware');
+
+        // Normalise URLs in Static Menus, if enabled
+        if (Normalise::normaliseNavigation()) {
+            Event::listen('pages.menu.referencesGenerated', function (&$items) {
+                $iterator = function ($menuItems) use (&$iterator) {
+                    $result = [];
+
+                    foreach ($menuItems as $item) {
+                        if ($item->items) {
+                            $item->items = $iterator($item->items);
+                        }
+                        if (isset($item->normalised)) {
+                            continue;
+                        }
+
+                        // Normalise URL if an internal link
+                        $originalUrl = $item->url;
+                        $normalisedUrl = Normalise::url($item->url);
+
+                        if ($originalUrl !== $normalisedUrl) {
+                            $item->url = $normalisedUrl;
+                            $item->normalised = true;
+                        } else {
+                            $item->normalised = false;
+                        }
+
+                        $result[] = $item;
+                    }
+
+                    return $result;
+                };
+
+                $items = $iterator($items);
+            });
+        }
     }
 }

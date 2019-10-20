@@ -25,6 +25,11 @@ return [
             'label' => 'Force HTTPS?',
             'comment' => 'If checked, the normalised URLs will always use a secure address.'
         ],
+        'normalise_nav' => [
+            'label' => 'Normalise URLs in navigation menus?',
+            'comment' => 'If checked, normalisation will be applied to all internal links in a Static Menu. This will
+            only apply if the Static Pages plugin is installed.',
+        ],
         'www_prefix' => [
             'label' => 'Domain prefix preference',
             'options' => [
