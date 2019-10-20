@@ -200,6 +200,10 @@ class Normalise
             return true;
         }
 
+        // Strip any prefixed "www" from the server names
+        $urlHostname = preg_replace('/www\./i', '', $urlHostname);
+        $serverName = preg_replace('/www\./i', '', $serverName);
+
         return (strtolower($serverName) !== strtolower($urlHostname));
     }
 
