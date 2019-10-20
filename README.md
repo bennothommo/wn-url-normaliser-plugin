@@ -8,6 +8,7 @@ Normalise URLs for your October CMS website and ensure that search engines only 
 - Enforce your pages to end, or to not end, with a trailing slash.
 - Ignore certain pages or sections of your site.
 - Apply normalisation through a `rel=canonical` link tag or through HTTP redirects.
+- Ensure your Static Pages navigation follows the normalisation standard.
 - Update your normalisation settings directly through October CMS.
 
 ## Requirements
