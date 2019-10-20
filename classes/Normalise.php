@@ -73,6 +73,7 @@ class Normalise
             return $url;
         }
 
+        $originalUrl = $url;
         $url = parse_url($url);
 
         // Set default URL parts, if not provided
@@ -99,14 +100,13 @@ class Normalise
                     : $url['path'];
                 $wildcardPos = strpos($ignorePath, '*');
 
-                if (
-                    $ignorePath === $targetPath
-                    || (
-                        $wildcardPos !== false
-                        && substr($ignorePath, 0, ($wildcardPos + 1)) === substr($targetPath, 0, ($wildcardPos + 1))
-                    )
-                ) {
-                    return $url;
+                if ($wildcardPos !== false) {
+                    $ignorePath = substr($ignorePath, 0, $wildcardPos);
+                    $targetPath = substr($targetPath, 0, $wildcardPos);
+                }
+
+                if ($ignorePath === $targetPath) {
+                    return $originalUrl;
                 }
             }
         }
