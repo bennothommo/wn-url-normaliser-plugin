@@ -90,6 +90,10 @@ class Normalise
         }
 
         // Check if path is ignored
+        if (empty($url['path'])) {
+            $url['path'] = '/';
+        }
+
         if (count($instance->pathsToIgnore) && $url['path'] !== '/') {
             foreach ($instance->pathsToIgnore as $ignorePath) {
                 $ignorePath = (substr($ignorePath, 0, 1) !== '/')
