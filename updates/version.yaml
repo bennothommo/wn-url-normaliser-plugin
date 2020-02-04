@@ -3,6 +3,6 @@
 1.0.2: Add checkbox for HTTPS to be forced
 1.0.3: Correctly remove "www." prefix if non-www is forced
 1.0.4: Fix bug where requests crossing domains were skipping the ignored paths check, and run a better check to determine if user is in Backend.
-1.1.0: Add new Normalise helper class. Add new checkbox to allow Static Menu navigation URLs to be normalised.
+1.1.0: !!! Add new Normalise helper class. Add new checkbox to allow Static Menu navigation URLs to be normalised. **(Requires October build 456 or above, or PECL HTTP extension)**
 1.1.1: Ignore "www." prefix when determining external link in helper class
 1.1.2: Fix missing index issue if the URL path is empty when processing normalisation rules
