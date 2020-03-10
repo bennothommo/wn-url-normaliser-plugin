@@ -7,3 +7,4 @@
 1.1.1: Ignore "www." prefix when determining external link in helper class
 1.1.2: Fix missing index issue if the URL path is empty when processing normalisation rules
 1.1.3: Publish plugin on Composer. See https://packagist.org/packages/bennothommo/oc-plugin-url-normaliser for more info.
+1.1.4: Hotfix to Composer configuration.

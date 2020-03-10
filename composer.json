@@ -1,5 +1,5 @@
 {
-    "name": "bennothommo/oc-url-normaliser-plugin",
+    "name": "bennothommo/oc-urlnormaliser-plugin",
     "description": "Normalise URLs for your October CMS website and ensure that search engines only index your canonical paths to prevent duplicate content.",
     "type": "october-plugin",
     "keywords": ["october", "plugin", "cms", "url", "normalisation", "google", "seo"],
