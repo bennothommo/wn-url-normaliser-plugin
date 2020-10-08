@@ -9,3 +9,4 @@
 1.1.3: Publish plugin on Composer. See https://packagist.org/packages/bennothommo/oc-plugin-url-normaliser for more info.
 1.1.4: Hotfix to Composer configuration.
 1.1.5: Maintenance - Remove October CMS from Composer dependencies for this plugin.
+1.1.6: Prevent plugin from booting if the database does not exist - fixes installation issues when installing October from Composer.

@@ -6,6 +6,8 @@ use System\Classes\SettingsManager;
 use BennoThommo\UrlNormaliser\Classes\Normalise;
 use Backend;
 use Event;
+use DB;
+use Illuminate\Database\QueryException;
 
 class Plugin extends PluginBase
 {
@@ -55,6 +57,11 @@ class Plugin extends PluginBase
 
     public function boot()
     {
+        // Prevent plugin from loading if the database does not exist
+        if (!$this->databaseExists()) {
+            return;
+        }
+        
         // Add normalise middleware
         $this->app['Illuminate\Contracts\Http\Kernel']
             ->prependMiddleware('BennoThommo\UrlNormaliser\Routing\NormaliseMiddleware');
@@ -93,5 +100,23 @@ class Plugin extends PluginBase
                 $items = $iterator($items);
             });
         }
+    }
+    
+    /**
+     * Detects if the database exists.
+     * 
+     * @return bool
+     */
+    public function databaseExists()
+    {
+        $databaseExists = false;
+        try {
+            // Test database connection (throw exception if no DB is configured yet)
+            $databaseExists = DB::table('system_settings')->exists();
+        } catch (QueryException $e) {
+            return false;
+        }
+
+        return $databaseExists;
     }
 }
