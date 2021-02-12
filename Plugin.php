@@ -80,8 +80,8 @@ class Plugin extends PluginBase
                             continue;
                         }
 
-                        // Normalise URL if an internal link
-                        if (!empty($item->url)) {
+                        // Normalise URL if an internal link, and not a simple hash-bang URL
+                        if (!empty($item->url) && substr($item->url, 0, 1) !== '#') {
                             $originalUrl = $item->url;
                             $normalisedUrl = Normalise::url($item->url);
 
