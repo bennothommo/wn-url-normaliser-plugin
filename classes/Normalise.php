@@ -219,7 +219,7 @@ class Normalise
     protected function getHostname()
     {
         return $_SERVER['SERVER_NAME']
-            ?? parse_url(url(), PHP_URL_HOST)
+            ?? parse_url(url()->current(), PHP_URL_HOST)
             ?? null;
     }
 }
