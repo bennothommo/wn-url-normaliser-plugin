@@ -10,3 +10,4 @@
 1.1.4: Hotfix to Composer configuration.
 1.1.5: Maintenance - Remove October CMS from Composer dependencies for this plugin.
 1.1.6: Prevent plugin from booting if the database does not exist - fixes installation issues when installing October from Composer.
+1.1.7: Fix a few menu item normalisation issues (hashbang URLs and non-URL menu item types). Fix error if server name environment variable is unavailable.
