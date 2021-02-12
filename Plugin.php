@@ -61,7 +61,7 @@ class Plugin extends PluginBase
         if (!$this->databaseExists()) {
             return;
         }
-        
+
         // Add normalise middleware
         $this->app['Illuminate\Contracts\Http\Kernel']
             ->prependMiddleware('BennoThommo\UrlNormaliser\Routing\NormaliseMiddleware');
@@ -81,14 +81,18 @@ class Plugin extends PluginBase
                         }
 
                         // Normalise URL if an internal link
-                        $originalUrl = $item->url;
-                        $normalisedUrl = Normalise::url($item->url);
+                        if (!empty($this->url)) {
+                            $originalUrl = $item->url;
+                            $normalisedUrl = Normalise::url($item->url);
 
-                        if ($originalUrl !== $normalisedUrl) {
-                            $item->url = $normalisedUrl;
-                            $item->normalised = true;
+                            if ($originalUrl !== $normalisedUrl) {
+                                $item->url = $normalisedUrl;
+                                $item->normalised = true;
+                            } else {
+                                $item->normalised = false;
+                            }
                         } else {
-                            $item->normalised = false;
+                            $item->normalised = true;
                         }
 
                         $result[] = $item;
@@ -101,10 +105,10 @@ class Plugin extends PluginBase
             });
         }
     }
-    
+
     /**
      * Detects if the database exists.
-     * 
+     *
      * @return bool
      */
     public function databaseExists()
