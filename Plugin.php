@@ -81,7 +81,7 @@ class Plugin extends PluginBase
                         }
 
                         // Normalise URL if an internal link
-                        if (!empty($this->url)) {
+                        if (!empty($item->url)) {
                             $originalUrl = $item->url;
                             $normalisedUrl = Normalise::url($item->url);
 
