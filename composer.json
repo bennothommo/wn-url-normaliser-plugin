@@ -1,8 +1,8 @@
 {
-    "name": "bennothommo/oc-urlnormaliser-plugin",
-    "description": "Normalise URLs for your October CMS website and ensure that search engines only index your canonical paths to prevent duplicate content.",
-    "type": "october-plugin",
-    "keywords": ["october", "plugin", "cms", "url", "normalisation", "google", "seo"],
+    "name": "bennothommo/wn-urlnormaliser-plugin",
+    "description": "Normalise URLs for your Winter CMS website and ensure that search engines only index your canonical paths to prevent duplicate content.",
+    "type": "winter-plugin",
+    "keywords": ["winter cms", "plugin", "cms", "url", "normalisation", "google", "seo"],
     "license": "MIT",
     "authors": [
         {
@@ -14,6 +14,6 @@
     "require": {
         "php": ">=7.0.8",
         "composer/installers": "~1.0",
-        "bennothommo/oc-meta-plugin": "^1.0.3"
+        "bennothommo/wn-meta-plugin": "^1.0.3"
     }
 }
