@@ -1,14 +1,15 @@
-1.0.0: !!! Initial version of the plugin
-1.0.1: Tweak URL settings fields, comments and required indicators
-1.0.2: Add checkbox for HTTPS to be forced
-1.0.3: Correctly remove "www." prefix if non-www is forced
-1.0.4: Fix bug where requests crossing domains were skipping the ignored paths check, and run a better check to determine if user is in Backend.
-1.1.0: !!! Add new Normalise helper class. Add new checkbox to allow Static Menu navigation URLs to be normalised. **(Requires Winter build 1.0.456 or above, or PECL HTTP extension)**
-1.1.1: Ignore "www." prefix when determining external link in helper class
-1.1.2: Fix missing index issue if the URL path is empty when processing normalisation rules
-1.1.3: Publish plugin on Composer. See https://packagist.org/packages/bennothommo/wn-url-normaliser-plugin for more info.
-1.1.4: Hotfix to Composer configuration.
-1.1.5: Maintenance - Remove Winter CMS from Composer dependencies for this plugin.
-1.1.6: Prevent plugin from booting if the database does not exist - fixes installation issues when installing Winter from Composer.
-1.1.7: Fix a few menu item normalisation issues (hashbang URLs and non-URL menu item types). Fix error if server name environment variable is unavailable.
-1.2.0: Rebranded for Winter CMS.
+"1.0.0": !!! Initial version of the plugin
+"1.0.1": Tweak URL settings fields, comments and required indicators
+"1.0.2": Add checkbox for HTTPS to be forced
+"1.0.3": Correctly remove "www." prefix if non-www is forced
+"1.0.4": Fix bug where requests crossing domains were skipping the ignored paths check, and run a better check to determine if user is in Backend.
+"1.1.0": !!! Add new Normalise helper class. Add new checkbox to allow Static Menu navigation URLs to be normalised. **(Requires Winter build 1.0.456 or above, or PECL HTTP extension)**
+"1.1.1": Ignore "www." prefix when determining external link in helper class
+"1.1.2": Fix missing index issue if the URL path is empty when processing normalisation rules
+"1.1.3": Publish plugin on Composer. See https://packagist.org/packages/bennothommo/wn-url-normaliser-plugin for more info.
+"1.1.4": Hotfix to Composer configuration.
+"1.1.5": Maintenance - Remove Winter CMS from Composer dependencies for this plugin.
+"1.1.6": Prevent plugin from booting if the database does not exist - fixes installation issues when installing Winter from Composer.
+"1.1.7": Fix a few menu item normalisation issues (hashbang URLs and non-URL menu item types). Fix error if server name environment variable is unavailable.
+"1.2.0": Rebranded for Winter CMS.
+"1.2.1": Keep non-standard port numbers in normalised URLs. Add Twig "normalise" filter to normalise links in templates.
