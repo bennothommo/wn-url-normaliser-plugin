@@ -86,7 +86,7 @@ class Normalise
             }
         }
         if (empty($url['scheme'])) {
-            $url['scheme'] = 'http';
+            $url['scheme'] = ($instance->getPort() === 443) ? 'https' : 'http';
         }
         if (empty($url['port'])) {
             if (
@@ -226,7 +226,9 @@ class Normalise
      */
     protected function getHostname()
     {
-        return $_SERVER['SERVER_NAME']
+        return
+            $_SERVER['X_FORWARDED_HOST']
+            ?? $_SERVER['SERVER_NAME']
             ?? parse_url(url()->current(), PHP_URL_HOST)
             ?? null;
     }
@@ -238,8 +240,11 @@ class Normalise
      */
     protected function getPort()
     {
-        return intval($_SERVER['SERVER_PORT']
+        return intval(
+            $_SERVER['X_FORWARDED_PORT']
+            ?? $_SERVER['SERVER_PORT']
             ?? parse_url(url()->current(), PHP_URL_PORT)
-            ?? 80);
+            ?? 80
+        );
     }
 }

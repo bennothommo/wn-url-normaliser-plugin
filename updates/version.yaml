@@ -13,3 +13,4 @@
 "1.1.7": Fix a few menu item normalisation issues (hashbang URLs and non-URL menu item types). Fix error if server name environment variable is unavailable.
 "1.2.0": Rebranded for Winter CMS.
 "1.2.1": Keep non-standard port numbers in normalised URLs. Add Twig "normalise" filter to normalise links in templates.
+"1.2.2": Allow for reverse proxies. Use correct default schema based on server port when adding schema to a normalised URL.
