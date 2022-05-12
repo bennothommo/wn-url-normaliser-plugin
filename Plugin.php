@@ -55,6 +55,17 @@ class Plugin extends PluginBase
         ];
     }
 
+    public function registerMarkupTags()
+    {
+        return [
+            'filters' => [
+                'normalise' => function ($text, $force = false) {
+                    return Normalise::url($text, $force);
+                },
+            ],
+        ];
+    }
+
     public function boot()
     {
         // Prevent plugin from loading if the database does not exist
