@@ -88,6 +88,14 @@ class Normalise
         if (empty($url['scheme'])) {
             $url['scheme'] = 'http';
         }
+        if (empty($url['port'])) {
+            if (
+                ($url['scheme'] === 'http' && $instance->getPort() !== 80)
+                || ($url['scheme'] === 'https' && $instance->getPort() !== 443)
+            ) {
+                $url['port'] = $instance->getPort();
+            }
+        }
 
         // Check if path is ignored
         if (empty($url['path'])) {
@@ -212,7 +220,7 @@ class Normalise
     }
 
     /**
-     * Get the hostname, either from the server variables or from the config.
+     * Get the hostname, either from the server variables or from the current URL.
      *
      * @return string|null
      */
@@ -221,5 +229,17 @@ class Normalise
         return $_SERVER['SERVER_NAME']
             ?? parse_url(url()->current(), PHP_URL_HOST)
             ?? null;
+    }
+
+    /**
+     * Get the port, either from the server variables or from the current URL.
+     *
+     * @return int
+     */
+    protected function getPort()
+    {
+        return intval($_SERVER['SERVER_PORT']
+            ?? parse_url(url()->current(), PHP_URL_PORT)
+            ?? 80);
     }
 }
