@@ -76,15 +76,21 @@ class Normalise
         $originalUrl = $url;
         $url = parse_url($url);
 
+        // If the link is not a HTTP or HTTPS link, return the URL as is
+        if (!empty($url['scheme']) && !in_array($url['scheme'], ['http', 'https'])) {
+            return \http_build_url($url);
+        }
+
         // Set default URL parts, if not provided
         if (empty($url['host'])) {
             $url['host'] = $instance->getHostname();
 
             // If we cannot determine the hostname, return the URL as is
             if (empty($url['host'])) {
-                return $url;
+                return \http_build_url($url);
             }
         }
+
         if (empty($url['scheme'])) {
             $url['scheme'] = ($instance->getPort() === 443) ? 'https' : 'http';
         }
